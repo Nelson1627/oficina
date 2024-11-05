@@ -29,7 +29,9 @@ Route::get('/', function () {
 
 
 // Ruta para reporte
-Route::get('/reporte', [ReportController::class,'reporteUno']);
+Route::get('/reporte', [ReportController::class, 'reporteUno']);
+
+
 
 // Rutas para Visitas
 Route::prefix('visitas')->group(function () {

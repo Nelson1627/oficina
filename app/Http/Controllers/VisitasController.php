@@ -42,14 +42,18 @@ class VisitasController extends Controller
     }
 
     public function update(Request $request, $id)
-    {
-        $data = $request->validate($this->validationRules());
-        
-        $visita = Visitas::findOrFail($id);
-        $visita->update($data);
-    
-        return redirect()->route('visitas.index')->with('success', 'Visita actualizada con éxito');
-    }
+    {    $visita = Visitas::findOrFail($id);
+
+        $data = $request->validate([ 
+            'ID_Visitante' => 'required|integer|exists:visitantes,ID_Visitante',
+            'Fecha_Hora_Entrada' => 'required|date|after_or_equal:now',
+            'Fecha_Hora_Salida' => 'nullable|date|after:Fecha_Hora_Entrada',
+            'Proposito' => 'required|string|max:255',
+        ]);
+    // Actualizar usuario
+    $visita->update($data);
+    return redirect()->route('visitas.index')->with('success', 'Visita actualizado con éxito');
+}
     
     public function destroy($id)
     {
