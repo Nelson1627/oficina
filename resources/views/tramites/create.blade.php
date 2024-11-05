@@ -12,7 +12,7 @@
                 <select class="form-control" name="ID_Visita" id="ID_Visita" required>
                     <option value="">Seleccione una visita</option>
                     @foreach($visitas as $visita)
-                        <option value="{{ $visita->ID_Visita }}">{{ $visita->proposito }}</option>
+                        <option value="{{ $visita->ID_Visita }}">{{ $visita->Proposito }}</option>
                     @endforeach
                 </select>
             </div>
@@ -21,7 +21,7 @@
                 <select class="form-control" name="ID_Usuario" id="ID_Usuario" required>
                     <option value="">Seleccione un usuario</option>
                     @foreach($usuarios as $usuario)
-                        <option value="{{ $usuario->ID_Usuario }}">{{ $usuario->nombre }}</option>
+                        <option value="{{ $usuario->ID_Usuario }}">{{ $usuario->Nombre }}</option>
                     @endforeach
                 </select>
             </div>

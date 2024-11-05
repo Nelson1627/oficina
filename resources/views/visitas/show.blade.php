@@ -24,6 +24,7 @@
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         background-color: rgb(244, 246, 235);
     }
+
     tbody {
         background-color: rgba(171, 190, 198, 0.234);
     }
@@ -83,23 +84,3 @@
     </div>
 </div>
 @endsection
-
-<style>
-    body {
-        background-color: #f8f9fa;
-    }
-    h1 {
-        font-family: 'Arial Black', sans-serif;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-    }
-    .table th {
-        background-color: #007bff;
-        color: white;
-    }
-    .table td {
-        transition: background-color 0.3s;
-    }
-    .table tr:hover td {
-        background-color: #e9ecef;
-    }
-</style>

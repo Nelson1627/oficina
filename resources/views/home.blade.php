@@ -17,7 +17,7 @@
 
     .login-background {
         background-color: rgba(49, 227, 188, 0.526); /* Fondo oscuro con opacidad */
-        padding: 40px;
+        padding: 50px;
         border-radius: 15px;
         text-align: center;
         box-shadow: 0 4px 30px rgba(162, 116, 116, 0.5);
@@ -72,32 +72,16 @@
 <div class="login-background">
     <div class="container">
         <div class="jumbotron">
-            <h1 class="display-4">¡Bienvenido al Sistema de Registro de Visitas!</h1>
+            <h1 class="display-4">¡Bienvenido al Sistema de Registro de Visitas a Oficina de JulNel Innovations!</h1>
             <p class="lead">Administra y controla las visitas a tu oficina de manera eficiente.</p>
             <a href="/visitantes/show" class="btn btn-outline-warning">VER VISITANTES</a>
-            <a href="/visitantes/create" class="btn btn-outline-danger">REGISTRAR NUEVO VISITANTE</a>
+            <a href="/visitantes/create" class="btn btn-outline-danger">REGISTRAR NUEVO VISITANTE</a>           
+        </div>
+        <div>
+            <a href="/welcome" class="btn btn-outline-info">ACERCA DE LA EMPRESA</a>
         </div>
     </div>
 </div>
 @endsection
 
-@section('navbar')
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark mb-4">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Inventario</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/home">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/visitas/show">Visitas</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-@endsection
+

@@ -31,19 +31,31 @@
         @method('PUT')
         <div class="form-group">
             <label for="nombre">Nombre</label>
-            <input type="text" class="form-control" id="nombre" name="Nombre" value="{{ $visitante->Nombre }}" required>
+            <input type="text" class="form-control" id="nombre" name="Nombre" value="{{ old('Nombre', $visitante->Nombre) }}" required>
+            @error('Nombre')
+                <small class="text-danger">{{ $message }}</small>
+            @enderror
         </div>
         <div class="form-group">
             <label for="documento_id">Documento ID</label>
-            <input type="text" class="form-control" id="documento_id" name="Documento_ID" value="{{ $visitante->Documento_ID }}" required>
+            <input type="text" class="form-control" id="documento_id" name="Documento_ID" value="{{ old('Documento_ID', $visitante->Documento_ID) }}" required pattern="\d{8}-\d{1}" title="Formato: 12345678-9">
+            @error('Documento_ID')
+                <small class="text-danger">{{ $message }}</small>
+            @enderror
         </div>
         <div class="form-group">
             <label for="telefono">Teléfono</label>
-            <input type="tel" class="form-control" id="telefono" name="Telefono" value="{{ $visitante->Telefono }}">
+            <input type="tel" class="form-control" id="telefono" name="Telefono" value="{{ old('Telefono', $visitante->Telefono) }}" pattern="\d{8}" title="Debe tener exactamente 8 dígitos">
+            @error('Telefono')
+                <small class="text-danger">{{ $message }}</small>
+            @enderror
         </div>
         <div class="form-group">
             <label for="correo">Correo Electrónico</label>
-            <input type="email" class="form-control" id="correo" name="Correo" value="{{ $visitante->Correo }}">
+            <input type="email" class="form-control" id="correo" name="Correo" value="{{ old('Correo', $visitante->Correo) }}">
+            @error('Correo')
+                <small class="text-danger">{{ $message }}</small>
+            @enderror
         </div>
         <button class="btn btn-success" type="submit">Actualizar</button>
     </form>

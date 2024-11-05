@@ -6,6 +6,7 @@ use App\Models\Tramites;
 use App\Models\Usuarios;
 use App\Models\Visitas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class TramitesController extends Controller
 {
@@ -23,7 +24,7 @@ class TramitesController extends Controller
     
     public function show($ID_Tramite)
     {
-        $tramite = Tramites::findOrFail($ID_Tramite);
+        $tramite = Tramites::with($ID_Tramite);
         return view('tramites.showDetail', compact('tramite'));
     }
     

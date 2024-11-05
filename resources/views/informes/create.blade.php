@@ -6,6 +6,17 @@
 
 <div class="container mt-5">
     <h2>Crear Informe</h2>
+    
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    
     <form action="{{ route('informes.store') }}" method="POST">
         @csrf
         <div class="form-group">
@@ -13,7 +24,7 @@
             <select class="form-control" name="ID_Visita" id="ID_Visita" required>
                 <option value="">Seleccione una visita</option>
                 @foreach($visitas as $visita)
-                    <option value="{{ $visita->ID_Visita }}">{{ $visita->proposito }}</option> <!-- Cambiado a proposito -->
+                    <option value="{{ $visita->ID_Visita }}">{{ $visita->Proposito }}</option> <!-- Asegúrate de que 'proposito' sea correcto -->
                 @endforeach
             </select>
         </div>
@@ -22,7 +33,7 @@
             <select class="form-control" name="ID_Usuario" id="ID_Usuario" required>
                 <option value="">Seleccione un usuario</option>
                 @foreach($usuarios as $usuario)
-                    <option value="{{ $usuario->ID_Usuario }}">{{ $usuario->Nombre }}</option> <!-- Asegúrate de que el campo sea correcto -->
+                    <option value="{{ $usuario->ID_Usuario }}">{{ $usuario->Nombre }}</option> <!-- Asegúrate de que 'Nombre' sea correcto -->
                 @endforeach
             </select>
         </div>
@@ -39,3 +50,4 @@
 </div>
 
 @endsection
+x

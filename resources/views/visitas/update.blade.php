@@ -34,7 +34,19 @@
         
         <div class="form-group">
             <label for="proposito">Propósito</label>
-            <input type="text" class="form-control" id="proposito" name="Proposito" value="{{ $visita->Proposito }}" required>
+            <select class="form-control" name="Proposito" id="proposito" required>
+                <option value="">Seleccione un propósito</option>
+                <option value="Reunión de trabajo" {{ $visita->Proposito == 'Reunión de trabajo' ? 'selected' : '' }}>Reunión de trabajo</option>
+                <option value="Entrevista" {{ $visita->Proposito == 'Entrevista' ? 'selected' : '' }}>Entrevista</option>
+                <option value="Entrega de documentos" {{ $visita->Proposito == 'Entrega de documentos' ? 'selected' : '' }}>Entrega de documentos</option>
+                <option value="Consulta de servicios" {{ $visita->Proposito == 'Consulta de servicios' ? 'selected' : '' }}>Consulta de servicios</option>
+                <option value="Capacitación" {{ $visita->Proposito == 'Capacitación' ? 'selected' : '' }}>Capacitación</option>
+                <option value="Revisión de proyectos" {{ $visita->Proposito == 'Revisión de proyectos' ? 'selected' : '' }}>Revisión de proyectos</option>
+                <option value="Asesoría legal" {{ $visita->Proposito == 'Asesoría legal' ? 'selected' : '' }}>Asesoría legal</option>
+                <option value="Atención al cliente" {{ $visita->Proposito == 'Atención al cliente' ? 'selected' : '' }}>Atención al cliente</option>
+                <option value="Actualización de datos" {{ $visita->Proposito == 'Actualización de datos' ? 'selected' : '' }}>Actualización de datos</option>
+                <option value="Networking" {{ $visita->Proposito == 'Networking' ? 'selected' : '' }}>Networking</option>
+            </select>
         </div>
         
         <div class="col-12 mt-2">

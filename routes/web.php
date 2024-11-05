@@ -8,6 +8,7 @@ use App\Http\Controllers\TramitesController;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\VisitantesController;
 use App\Http\Controllers\VisitasController;
+use App\Http\Controllers\ReportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,11 @@ use App\Http\Controllers\VisitasController;
 Route::get('/', function () {
     return view('auth.login');
 });
+
+
+
+// Ruta para reporte
+Route::get('/reporte', [ReportController::class,'reporteUno']);
 
 // Rutas para Visitas
 Route::prefix('visitas')->group(function () {

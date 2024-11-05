@@ -6,6 +6,17 @@
 
 <div class="container mt-5">
     <h1 class="text-center">Modificar Informe</h1>
+    
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <form action="{{ route('informes.update', $informe->ID_Informe) }}" method="POST">
         @csrf
         @method('PUT')
@@ -20,7 +31,7 @@
                 <option value="">Seleccione una visita</option>
                 @foreach($visitas as $visita)
                     <option value="{{ $visita->ID_Visita }}" {{ $visita->ID_Visita == $informe->ID_Visita ? 'selected' : '' }}>
-                        {{ $visita->descripcion }}
+                        {{ $visita->Proposito }} <!-- Asegúrate de que 'descripcion' sea correcto -->
                     </option>
                 @endforeach
             </select>
@@ -31,7 +42,7 @@
                 <option value="">Seleccione un usuario</option>
                 @foreach($usuarios as $usuario)
                     <option value="{{ $usuario->ID_Usuario }}" {{ $usuario->ID_Usuario == $informe->ID_Usuario ? 'selected' : '' }}>
-                        {{ $usuario->nombre }}
+                        {{ $usuario->Nombre }} <!-- Asegúrate de que 'Nombre' sea correcto -->
                     </option>
                 @endforeach
             </select>

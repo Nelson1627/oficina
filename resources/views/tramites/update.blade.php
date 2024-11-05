@@ -15,7 +15,7 @@
                 <option value="">Seleccione una visita</option>
                 @foreach($visitas as $visita)
                     <option value="{{ $visita->ID_Visita }}" {{ $visita->ID_Visita == $tramite->ID_Visita ? 'selected' : '' }}>
-                        {{ $visita->proposito }}
+                        {{ $visita->Proposito }}
                     </option>
                 @endforeach
             </select>
@@ -27,7 +27,7 @@
                 <option value="">Seleccione un usuario</option>
                 @foreach($usuarios as $usuario)
                     <option value="{{ $usuario->ID_Usuario }}" {{ $usuario->ID_Usuario == $tramite->ID_Usuario ? 'selected' : '' }}>
-                        {{ $usuario->nombre }}
+                        {{ $usuario->Nombre }}
                     </option>
                 @endforeach
             </select>

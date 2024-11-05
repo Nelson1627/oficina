@@ -42,7 +42,19 @@
             </div>
             <div class="col-12 mt-3">
                 <label for="proposito">Propósito</label>
-                <input type="text" class="form-control" name="Proposito" id="proposito" required>
+                <select class="form-control" name="Proposito" id="proposito" required>
+                    <option value="">Seleccione un propósito</option>
+                    <option value="Reunión de trabajo">Reunión de trabajo</option>
+                    <option value="Entrevista">Entrevista</option>
+                    <option value="Entrega de documentos">Entrega de documentos</option>
+                    <option value="Consulta de servicios">Consulta de servicios</option>
+                    <option value="Capacitación">Capacitación</option>
+                    <option value="Revisión de proyectos">Revisión de proyectos</option>
+                    <option value="Asesoría legal">Asesoría legal</option>
+                    <option value="Atención al cliente">Atención al cliente</option>
+                    <option value="Actualización de datos">Actualización de datos</option>
+                    <option value="Networking">Networking</option>
+                </select>
                 @error('Proposito')
                 <span class="invalid-feedback d-block" role="alert">
                     <strong>{{ $message }}</strong>

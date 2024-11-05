@@ -12,18 +12,18 @@ class InformeController extends Controller
     public function index()
     {
         $informes = Informe::with(['usuario', 'visita'])->get();
-        $visitas = Visitas::all(); // Carga todas las visitas
+        $visitas = Visitas::all();
     
         return view('informes.show')->with([
-            'informes' => $informes, // Cambiado de 'informe' a 'informes'
+            'informes' => $informes,
             'visitas' => $visitas
         ]);
     }
     
     public function create()
     {
-        $visitas = Visitas::all(); // O el método que uses para obtener las visitas
-        $usuarios = Usuarios::all(); // O el método que uses para obtener los usuarios
+        $visitas = Visitas::all();
+        $usuarios = Usuarios::all();
         return view('informes.create', compact('visitas', 'usuarios'));
     }
     
